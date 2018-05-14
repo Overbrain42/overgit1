@@ -40,8 +40,8 @@
         "main": true,
         "title": "Home",
         "meta_descr": "",
-        "header_custom": "<script async=\"\" custom-element=\"amp-iframe\" src=\"https://cdn.ampproject.org/v0/amp-iframe-0.1.js\"></script>\n<script>\n        window.parent.postMessage({\n          sentinel: 'amp',\n          type: 'embed-size',\n          height: document.body.scrollHeight\n        }, '*');\n    </script>",
-        "footer_custom": "",
+        "header_custom": "",
+        "footer_custom": "<script>\n(function (d, w) {\n  var BORDER_WIDTH = 2;\n  var sizes = [200, 300];\n  var currentSize = 0;\n  postSize(sizes[currentSize]);\n\n  d.getElementById('action').onclick = function(event) {\n    postSize(sizes[currentSize]);\n  }\n\n  function postSize(size) {\n    console.log('post new embed-size: ' + size + 'x' + size);\n    d.getElementById('size').innerHTML = size + 'x' + size;\n    var box = d.getElementById('box');\n    box.style.width = size - BORDER_WIDTH + 'px';\n    box.style.height = size - BORDER_WIDTH + 'px';\n    currentSize = (currentSize + 1) % sizes.length;\n\n    w.parent.postMessage({\n      sentinel: 'amp',\n      type: 'embed-size',\n      height: size,\n      width: size\n    }, '*');\n\n  }\n})(document, window);\n  </script>",
         "html_before": ""
       },
       "components": [
