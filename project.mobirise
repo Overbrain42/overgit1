@@ -41,7 +41,7 @@
         "title": "Home",
         "meta_descr": "",
         "header_custom": "",
-        "footer_custom": "",
+        "footer_custom": "<script>\n        window.parent.postMessage({\n          sentinel: 'amp',\n          type: 'embed-size',\n          height: document.body.scrollHeight\n        }, '*');\n    </script>",
         "html_before": ""
       },
       "components": [
