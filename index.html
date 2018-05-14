@@ -22,34 +22,12 @@
   
   
   <script>
-(function (d, w) {
-  var BORDER_WIDTH = 2;
-  var sizes = [200, 300];
-  var currentSize = 0;
-  postSize(sizes[currentSize]);
-
-  d.getElementById('action').onclick = function(event) {
-    postSize(sizes[currentSize]);
-  }
-
-  function postSize(size) {
-    console.log('post new embed-size: ' + size + 'x' + size);
-    d.getElementById('size').innerHTML = size + 'x' + size;
-    var box = d.getElementById('box');
-    box.style.width = size - BORDER_WIDTH + 'px';
-    box.style.height = size - BORDER_WIDTH + 'px';
-    currentSize = (currentSize + 1) % sizes.length;
-
-    w.parent.postMessage({
-      sentinel: 'amp',
-      type: 'embed-size',
-      height: size,
-      width: size
-    }, '*');
-
-  }
-})(document, window);
-  </script>
+        window.parent.postMessage({
+          sentinel: 'amp',
+          type: 'embed-size',
+          height: document.body.scrollHeight
+        }, '*');
+    </script>
 </head>
 <body>
   <section class="mbr-instagram-feed" data-rows="2" data-per-row-slider="" data-spacing="5" data-full-width="" data-token="289250129.727bfe1.5a3356c31c0c4e60ab90bead3a643b69" data-per-row-grid="4" id="instagram-feed-block-0" data-rv-view="0" style="background-image: url(assets/images/instagram-background.jpg); padding-top: 40px; padding-bottom: 40px;">
@@ -68,7 +46,7 @@
 </section>
 
 
-  <section class="engine"><a href="https://mobirise.me/l">free web templates</a></section><script src="assets/web/assets/jquery/jquery.min.js"></script>
+  <section class="engine"><a href="https://mobirise.me/i">free web creation software</a></section><script src="assets/web/assets/jquery/jquery.min.js"></script>
   <script src="assets/popper/popper.min.js"></script>
   <script src="assets/tether/tether.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
