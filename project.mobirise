@@ -40,7 +40,7 @@
         "main": true,
         "title": "Home",
         "meta_descr": "",
-        "header_custom": "<script>\n        window.parent.postMessage({\n          sentinel: 'amp',\n          type: 'embed-size',\n          height: document.body.scrollHeight\n        }, '*');\n    </script>",
+        "header_custom": "<script async=\"\" custom-element=\"amp-iframe\" src=\"https://cdn.ampproject.org/v0/amp-iframe-0.1.js\"></script>\n<script>\n        window.parent.postMessage({\n          sentinel: 'amp',\n          type: 'embed-size',\n          height: document.body.scrollHeight\n        }, '*');\n    </script>",
         "footer_custom": "",
         "html_before": ""
       },
